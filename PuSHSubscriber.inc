@@ -41,7 +41,7 @@ class PuSHSubscriber {
     if (!isset($subscribers[$domain][$subscriber_id])) {
       $subscribers[$domain][$subscriber_id] = new PuSHSubscriber($domain, $subscriber_id, $subscription_class, $env);
     }
-    return $subscribers;
+    return $subscribers[$domain][$subscriber_id];
   }
 
   /**
