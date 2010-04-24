@@ -124,7 +124,7 @@ class PuSHSubscriber {
     // No subscription notification has ben sent, we are being notified.
     else {
       if ($raw = $this->receive()) {
-        $callback($raw, $this->domain, $this->subscriber_id);
+        call_user_func($callback, $raw, $this->domain, $this->subscriber_id);
       }
     }
   }
